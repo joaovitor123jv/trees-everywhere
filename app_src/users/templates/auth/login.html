@@ -1,0 +1,15 @@
+{% extends 'auth_base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{ login_form }}
+
+        <input type="submit" value="login" />
+    </form>
+
+    {# Assumes you setup the password_reset view in your URLconf #}
+    <p><a href="{% url 'recover-password' %}">Lost password?</a></p>
+{% endblock %}

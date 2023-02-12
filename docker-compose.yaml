@@ -1,0 +1,41 @@
+services:
+  trees_everywhere:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app_src:/code
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+    environment:
+      DB_HOST: "db"
+      DB_NAME: "trees_everywhere"
+      DB_USER: "postgres"
+      DB_PASSWORD: "postgres"
+      SECRET_KEY: "django-insecure-c^@hl-to=^@!t&-zo$$hm_wstss+&5+j*$$-0a@y3b(eaia16wnd"
+    links:
+      - db:db
+    networks:
+      - django-network
+  db:
+    container_name: db
+    image: postgres:14.7-alpine
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: /usr/bin/pg_isready
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    environment:
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_USER: "postgres"
+      POSTGRES_DB: "trees_everywhere"
+    ports:
+      - '5432:5432'
+    networks:
+      - django-network
+
+networks:
+  django-network:

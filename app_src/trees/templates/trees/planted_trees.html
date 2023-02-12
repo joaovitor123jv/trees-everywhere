@@ -1,0 +1,18 @@
+<html>
+    <title> Planted Trees! </title>
+    <body>
+        Essa é a página de Planted Trees!
+        <br/>
+        E esse é o usuário logado: {{ user }}
+        <br/>
+        E esse é o username do usuário logado: {{ user.username }}
+        <br/>
+        E esse é o email do usuário logado: {{ user.email }}
+
+        <div>
+            <a href={% url 'logout' %}>
+                Clica aqui pra deslogar
+            </a>
+        </div>
+    </body>
+</html>

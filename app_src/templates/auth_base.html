@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Trees Everywhere - {% block title %}{% endblock %}
+        </title>
+        <link rel="stylesheet" href="{% static 'css/reset-style.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/header-style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/login-style.css' %}" />
+    </head>
+
+    <body>
+        <header class="page-header">
+            <div class="topnav">
+                <a href="{% url 'landing_page' %}">Home</a>
+                <a href="{% url 'login' %} class="active">Login</a>
+            </div>
+        </header>
+
+        <main class="auth-container">
+            <div class="row">
+                <div class="col">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

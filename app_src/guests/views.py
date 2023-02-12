@@ -1,0 +1,6 @@
+from django.conf import settings
+from django.shortcuts import render
+
+def landing_page(request):
+    return render(request, 'guests/landing_page.html')
+
