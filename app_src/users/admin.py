@@ -9,6 +9,7 @@ class AccountAdmin(admin.ModelAdmin):
     search_fields = ['name']
     readonly_fields = ['created']
     list_filter = ['active']
+    list_editable = ['active']
 
 
 @admin.register(Profile)
