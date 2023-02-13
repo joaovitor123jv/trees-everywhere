@@ -1,0 +1,100 @@
+[
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$T3k3Z3hWVjZEWElYMTY2YVRwczRVSg$Mw3Qta2d8DjoElPMbcFKH5LJ+w14mbEFHgq4/75louQ",
+        "last_login": "2023-02-13T10:31:55.196Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "admin@example.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2023-02-12T02:19:25.457Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 1,
+    "fields": {
+        "name": "Árvore-do-viajante",
+        "scientific_name": "Ravenala madagascariensis"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 2,
+    "fields": {
+        "name": "Jacarandá-mimoso",
+        "scientific_name": "Jacaranda mimosifolia"
+    }
+},
+{
+    "model": "trees.plantedtree",
+    "pk": 1,
+    "fields": {
+        "tree": 1,
+        "user": [
+            "admin"
+        ],
+        "account": 1,
+        "planted_at": "2023-02-12T19:32:30.835Z"
+    }
+},
+{
+    "model": "trees.plantedtree",
+    "pk": 2,
+    "fields": {
+        "tree": 2,
+        "user": [
+            "admin"
+        ],
+        "account": 1,
+        "planted_at": "2023-02-13T10:38:33.878Z"
+    }
+},
+{
+    "model": "trees.plantedtree",
+    "pk": 3,
+    "fields": {
+        "tree": 1,
+        "user": [
+            "admin"
+        ],
+        "account": 1,
+        "planted_at": "2023-02-13T10:38:43.727Z"
+    }
+},
+{
+    "model": "trees.plantedtree",
+    "pk": 4,
+    "fields": {
+        "tree": 2,
+        "user": [
+            "admin"
+        ],
+        "account": 1,
+        "planted_at": "2023-02-13T10:38:54.426Z"
+    }
+},
+{
+    "model": "users.account",
+    "pk": 1,
+    "fields": {
+        "name": "Greenpeace",
+        "created": "2023-02-12T19:28:24.523Z",
+        "active": true
+    }
+},
+{
+    "model": "users.profile",
+    "pk": 1,
+    "fields": {
+        "text": "Greenpeace é uma organização não governamental ambiental com sede em Amesterdão, nos Países Baixos, e com escritórios espalhados em mais de 55 países.",
+        "joined": "2023-02-12T19:28:54.405Z"
+    }
+}
+]
