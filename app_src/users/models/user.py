@@ -7,6 +7,10 @@ if TYPE_CHECKING:
     from app_src.trees.models import Tree
 
 class User(DjangoUser):
+    def accounts(self):
+        from .account import Account
+        return Account.objects.filter(useraccount__user=self)
+
     def plant_tree(self, tree: 'Tree', location: tuple[Decimal, Decimal]):
         return 'I planted a tree!'
 
@@ -15,3 +19,4 @@ class User(DjangoUser):
 
     class Meta:
         proxy = True
+        # Table name = auth_user (Django's default)

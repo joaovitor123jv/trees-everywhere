@@ -14,5 +14,23 @@
                 Clica aqui pra deslogar
             </a>
         </div>
+
+        Trees Planted by User
+        <ul>
+            {% for tree in user_trees %}
+                <li>
+                    {{ tree }}
+                </li>
+            {% endfor %}
+        </ul>
+
+        Trees Planted by User's Friends
+        <ul>
+            {% for tree in account_trees %}
+                <li>
+                    {{ tree }}
+                </li>
+            {% endfor %}
+        </ul>
     </body>
 </html>
