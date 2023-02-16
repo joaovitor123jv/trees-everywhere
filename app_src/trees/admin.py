@@ -3,10 +3,17 @@ from django.contrib import admin
 from .models import Tree, PlantedTree
 
 
+class PlantedTreeInline(admin.TabularInline):
+    model = PlantedTree
+    extra = 0
+    readonly_fields = ['planted_at', 'user', 'account']
+
+
 @admin.register(Tree)
 class TreeAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'scientific_name']
     search_fields = ['name', 'scientific_name']
+    inlines = [PlantedTreeInline]
 
 
 @admin.register(PlantedTree)

@@ -1,6 +1,7 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
-from .user import User
+User = get_user_model()
 
 
 class Account(models.Model):
@@ -8,10 +9,10 @@ class Account(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True)
 
-    users = models.ManyToManyField('users.User', through='users.UserAccount')
+    users = models.ManyToManyField(User, through='users.UserAccount')
 
-    def from_user(user: User):
-        return Account.objects.filter(users=user)
+    def __str__(self):
+        return f"[{self.id}] {self.name}"
 
     class Meta:
         db_table = 'account'

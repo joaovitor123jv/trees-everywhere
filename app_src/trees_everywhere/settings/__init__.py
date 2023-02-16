@@ -19,23 +19,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 
+# Defines what page should be used right after a successful user authentication
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+# 8 hours by default
+SESSION_EXPIRE_SECONDS= 60 * 60 * 8
+
 from .debug_settings import *
 from .rest_framework_settings import *
 from .db_settings import *
 from .security_settings import *
 from .language_settings import *
 from .template_settings import *
-
-
-# Defines what page should be used right after a successful user authentication
-LOGGED_IN_FIRST_PAGE = 'planted_trees'
-LOGIN_REDIRECT_URL = '/'
-
-# 8 hours by default
-SESSION_EXPIRE_SECONDS= 60 * 60 * 8
-
-# Defines what page should be used as first page for guest users (not authenticated users)
-GUEST_FIRST_PAGE = 'landing_page'
 
 
 # ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
@@ -49,9 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'trees.apps.TreesConfig',
-    'users.apps.UsersConfig',
-    'guests.apps.GuestsConfig',
+    'users',
+    'trees',
+    'guests',
 ]
 
 MIDDLEWARE = [
@@ -63,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'trees_everywhere.urls'
 

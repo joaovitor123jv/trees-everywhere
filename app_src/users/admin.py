@@ -1,6 +1,28 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 
-from .models import Account, Profile
+from .models import Account, Profile, User
+from .forms import CustomUserChangeForm, CustomUserCreatingForm
+
+
+class UserAccountInline(admin.TabularInline):
+    model = User.accounts.through
+    extra = 0
+    readonly_fields = ['created_at']
+
+
+@admin.register(User)
+class UserAdmin(DjangoUserAdmin):
+    add_form = CustomUserCreatingForm
+    form = CustomUserChangeForm
+    model = User
+    list_display = ['username', 'email', 'full_name', 'is_staff']
+    readonly_fields = ['last_login', 'date_joined', 'is_superuser']
+    # filter_horizontal = ['groups', 'user_permissions', 'accounts']
+    inlines = [UserAccountInline]
+
+    def full_name(self, obj):
+        return obj.get_full_name()
 
 
 @admin.register(Account)
