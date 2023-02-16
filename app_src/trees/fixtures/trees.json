@@ -1,0 +1,410 @@
+[
+{
+    "model": "trees.tree",
+    "pk": 1,
+    "fields": {
+        "name": "Árvore-do-viajante",
+        "scientific_name": "Ravenala madagascariensis"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 2,
+    "fields": {
+        "name": "Black Ash",
+        "scientific_name": "Fraxinus nigra"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 3,
+    "fields": {
+        "name": "White Ash",
+        "scientific_name": "Fraxinus americana"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 4,
+    "fields": {
+        "name": "Bigtooth Aspen",
+        "scientific_name": "Populus grandidentata"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 5,
+    "fields": {
+        "name": "Quaking Aspen",
+        "scientific_name": "Populus tremuloides"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 6,
+    "fields": {
+        "name": "Basswood",
+        "scientific_name": "Tilia americana"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 7,
+    "fields": {
+        "name": "American Beech",
+        "scientific_name": "Fagus grandifolia"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 8,
+    "fields": {
+        "name": "Black Birch",
+        "scientific_name": "Betula lenta"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 9,
+    "fields": {
+        "name": "Gray Birch",
+        "scientific_name": "Betula populifolia"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 10,
+    "fields": {
+        "name": "Paper Birch",
+        "scientific_name": "Betula papyrifera"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 11,
+    "fields": {
+        "name": "Yellow Birch",
+        "scientific_name": "Betula alleghaniensis"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 12,
+    "fields": {
+        "name": "Butternut",
+        "scientific_name": "Juglans cinerea"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 13,
+    "fields": {
+        "name": "Black Cherry",
+        "scientific_name": "Prunus serotina"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 14,
+    "fields": {
+        "name": "Pin Cherry",
+        "scientific_name": "Prunus pensylvanica"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 15,
+    "fields": {
+        "name": "American Chestnut",
+        "scientific_name": "Castanea dentata"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 16,
+    "fields": {
+        "name": "Eastern Cottonwood",
+        "scientific_name": "Populus deltoides"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 17,
+    "fields": {
+        "name": "Cucumber Tree",
+        "scientific_name": "Magnolia acuminata"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 18,
+    "fields": {
+        "name": "American Elm",
+        "scientific_name": "Ulmus americana"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 19,
+    "fields": {
+        "name": "Slippery Elm",
+        "scientific_name": "Ulmus rubra"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 20,
+    "fields": {
+        "name": "Balsam Fir",
+        "scientific_name": "Abies balsamea"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 21,
+    "fields": {
+        "name": "Hawthorn",
+        "scientific_name": "Crataegus"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 22,
+    "fields": {
+        "name": "Eastern Hemlock",
+        "scientific_name": "Tsuga canadensis"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 23,
+    "fields": {
+        "name": "Bitternut Hickory",
+        "scientific_name": "Carya cordiformis"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 24,
+    "fields": {
+        "name": "Pignut Hickory",
+        "scientific_name": "Carya glabra"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 25,
+    "fields": {
+        "name": "Shagbark Hickory",
+        "scientific_name": "Carya ovata"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 26,
+    "fields": {
+        "name": "American Hophornbeam",
+        "scientific_name": "Ostrya virginiana"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 27,
+    "fields": {
+        "name": "American Hornbeam",
+        "scientific_name": "Carpinus caroliniana"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 28,
+    "fields": {
+        "name": "American Larch",
+        "scientific_name": "Larix laricina"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 29,
+    "fields": {
+        "name": "Black Locust",
+        "scientific_name": "Robinia pseudoacacia"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 30,
+    "fields": {
+        "name": "Honey-Locust",
+        "scientific_name": "Gleditsia triacanthos"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 31,
+    "fields": {
+        "name": "Red Maple",
+        "scientific_name": "Acer rubrum"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 32,
+    "fields": {
+        "name": "Silver Maple",
+        "scientific_name": "Acer saccharinum"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 33,
+    "fields": {
+        "name": "Sugar Maple",
+        "scientific_name": "Acer saccharum"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 34,
+    "fields": {
+        "name": "The Oaks",
+        "scientific_name": "about all species"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 35,
+    "fields": {
+        "name": "Black Oak",
+        "scientific_name": "Quercus velutina"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 36,
+    "fields": {
+        "name": "Chestnut Oak",
+        "scientific_name": "Quercus montana"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 37,
+    "fields": {
+        "name": "Northern Red Oak",
+        "scientific_name": "Quercus rubra"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 38,
+    "fields": {
+        "name": "Scarlet Oak",
+        "scientific_name": "Quercus coccinea"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 39,
+    "fields": {
+        "name": "White Oak",
+        "scientific_name": "Quercus alba"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 40,
+    "fields": {
+        "name": "Eastern White Pine",
+        "scientific_name": "Pinus strobus"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 41,
+    "fields": {
+        "name": "Pitch Pine",
+        "scientific_name": "Pinus rigida"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 42,
+    "fields": {
+        "name": "Red Pine",
+        "scientific_name": "Pinus resinosa"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 43,
+    "fields": {
+        "name": "Eastern Redcedar",
+        "scientific_name": "Juniperus virginiana"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 44,
+    "fields": {
+        "name": "Sassafras",
+        "scientific_name": "Sassafras albidum"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 45,
+    "fields": {
+        "name": "Shadbush",
+        "scientific_name": "Amelanchier canadensis"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 46,
+    "fields": {
+        "name": "Red Spruce",
+        "scientific_name": "Picea rubens"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 47,
+    "fields": {
+        "name": "White Spruce",
+        "scientific_name": "Picea glauca"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 48,
+    "fields": {
+        "name": "Sycamore",
+        "scientific_name": "Platanus occidentalis"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 49,
+    "fields": {
+        "name": "Tulip Tree",
+        "scientific_name": "Liriodendron tulipifera"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 50,
+    "fields": {
+        "name": "Black Walnut",
+        "scientific_name": "Juglans nigra"
+    }
+},
+{
+    "model": "trees.tree",
+    "pk": 51,
+    "fields": {
+        "name": "Black Willow",
+        "scientific_name": "Salix nigra"
+    }
+}
+]
