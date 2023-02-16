@@ -44,6 +44,12 @@ fix-permissions: ${BIN_HELPERS}
 	@${LOG_SUCCESS} "Enabling bin helpers execution... DONE"
 
 
+test: ## Run tests (on docker)
+	@${LOG_DEFAULT} "Running tests..."
+	@docker-compose run $(DJANGO_APP_NAME) python manage.py test
+	@${LOG_SUCCESS} "Running tests... DONE"
+
+
 # The venv directory should not be included in the docker image, do NOT move it to app_src directory
 venv: fix-permissions requirements.txt
 	@${LOG_DEFAULT} "Creating python virtual environment..."
