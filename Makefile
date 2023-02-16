@@ -1,6 +1,4 @@
 COLOR_RESET=\033[0m
-COLOR_RED=\033[0;31m
-COLOR_GREEN=\033[0;32m
 COLOR_YELLOW=\033[0;33m
 COLOR_BLUE=\033[0;34m
 
@@ -19,6 +17,18 @@ date = $(shell date +"%Y-%M-%d %H:%M:%S")
 
 DJANGO_SRC_DIR = app_src
 DJANGO_APP_NAME = trees_everywhere
+
+UPDATE_FIXTURES_COMMAND = docker-compose run ${DJANGO_APP_NAME} python manage.py dumpdata \
+	--indent 4 \
+	--natural-foreign \
+	--natural-primary \
+	--exclude auth.permission \
+	--exclude sessions.session \
+	--exclude admin.logentry \
+	--exclude contenttypes 
+
+LOAD_FIXTURE_COMMAND = docker-compose run ${DJANGO_APP_NAME} python manage.py loaddata
+	
 
 help: ## Show this help.
 	@echo "${COLOR_YELLOW} ============= Welcome to TreesEverywhere ============= ${COLOR_RESET}"
@@ -51,18 +61,16 @@ update-requirements: venv ## Update requirements.txt
 	@venv/bin/pip freeze > requirements.txt
 	@${LOG_SUCCESS} "Updating requirements.txt... DONE"
 
+app_src/users/fixtures app_src/trees/fixtures:
+	mkdir -p $@
 
-update-fixtures: ## Update fixtures
+
+update-fixtures: app_src/users/fixtures app_src/trees/fixtures ## Update fixtures
 	@${LOG_DEFAULT} "Updating fixtures..."
-	@docker-compose run ${DJANGO_APP_NAME} python manage.py dumpdata \
-		--indent 4 \
-		--natural-foreign \
-		--natural-primary \
-		--exclude auth.permission \
-		--exclude sessions.session \
-		--exclude admin.logentry \
-		--exclude contenttypes \
-		> fixtures.json
+	@${LOG_WARNING} "\t Updating fixtures for app: users"
+	@${UPDATE_FIXTURES_COMMAND} users > app_src/users/fixtures/users.json
+	@${LOG_WARNING} "\t Updating fixtures for app: trees"
+	@${UPDATE_FIXTURES_COMMAND} trees > app_src/trees/fixtures/trees.json
 	@${LOG_SUCCESS} "Updating fixtures... DONE"
 
 
@@ -119,9 +127,12 @@ migrations: ## Create migrations (use the argument 'name' to specify the name of
 	@${LOG_SUCCESS} "Parsing models to look for pending migrations... DONE"
 
 
-load-fixtures: ## Load fixtures
+load-fixtures: app_src/users/fixtures/users.json app_src/trees/fixtures/trees.json ## Load fixtures
 	@${LOG_DEFAULT} "Loading fixtures..."
-	@docker-compose run $(DJANGO_APP_NAME) python manage.py loaddata ./fixtures.json
+	@${LOG_WARNING} "\t Loading fixtures for app: users"
+	@${LOAD_FIXTURE_COMMAND} users/fixtures/users.json &> /dev/null
+	@${LOG_WARNING} "\t Loading fixtures for app: trees"
+	@${LOAD_FIXTURE_COMMAND} trees/fixtures/trees.json &> /dev/null
 	@${LOG_SUCCESS} "Loading fixtures... DONE"
 
 
@@ -149,7 +160,7 @@ doc: venv ## Generate documentation
 
 
 clean: ## Clean the project, removing all generated files, docker images, containers and volumes
-	@Cleaning up..."
+	@${LOG_DEFAULT} "Cleaning up..."
 	@${LOG_WARNING} "\t Removing virtual environment..."
 	@rm -rf venv
 	@${LOG_WARNING} "\t Removing docker images..."
