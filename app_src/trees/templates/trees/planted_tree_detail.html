@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra-css %}
+    <link rel="stylesheet" href="{% static 'css/planted-trees.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="page-description">
+        <div class="left-side">
+            Welcome, {{ user.username }}!
+        </div>
+        <div class="right-side">
+            <p>See the details of the selected planted tree!</p>
+        </div>
+    </div>
+
+    <div class="user-trees">
+        <ul>
+            <li>
+                <div class="field-name">
+                    Tree:
+                </div>
+                <div class="field-description">
+                    {{ planted_tree.tree.name }}
+                </div>
+            </li>
+            <li>
+                <div class="field-name">
+                    Planted at:
+                </div>
+                <div class="field-description">
+                    {{ planted_tree.planted_at }}
+                </div>
+            </li>
+            <li>
+                <div class="field-name">
+                    Planted by:
+                </div>
+                <div class="field-description">
+                    {{ planted_tree.user }}
+                </div>
+            </li>
+            <li>
+                <div class="field-name">
+                    Linked to account:
+                </div>
+                <div class="field-description">
+                    {{ planted_tree.account }}
+                </div>
+            </li>
+            <li>
+                <div class="field-name">
+                    Planted Tree ID:
+                </div>
+                <div class="field-description">
+                    {{ planted_tree.id }}
+                </div>
+            </li>
+            <li>
+                <div class="field-name">
+                    Tree name:
+                </div>
+                <div class="field-description">
+                    {{ planted_tree.tree.name }}
+                </div>
+            </li>
+            <li>
+                <div class="field-name">
+                    Tree scientific name:
+                </div>
+                <div class="field-description">
+                    {{ planted_tree.tree.scientific_name }}
+                </div>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

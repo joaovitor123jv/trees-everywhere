@@ -1,12 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
 <html>
-    <title>
-        Landing page for Guests
-    </title>
-    <body>
-        Welcome to TreesEverywhere project!
+    <head>
+        <title>
+            Trees Everywhere - Landing Page
+        </title>
+        <link rel="stylesheet" href="{% static 'css/reset-style.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/header-style.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/landing-style.css' %}" />
+    </head>
 
-        <div>
-            Wanna login? <a href={% url 'login' %}> Click Here! </a>
-        </div>
+    <body>
+        <header class="page-header">
+            <div class="topnav">
+                <a href="{% url 'landing_page' %}" class="active">Home</a>
+                <a href="{% url 'login' %}">Login</a>
+            </div>
+        </header>
+
+        <main class="landing-container">
+            <div class="welcome-message">
+                Welcome to TreesEverywhere project!
+            </div>
+
+            <div class="login-invite">
+                Wanna login? <a href={% url 'login' %}> Click Here! </a>
+            </div>
+        </main>
     </body>
 </html>

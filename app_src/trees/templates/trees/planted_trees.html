@@ -1,36 +1,47 @@
-<html>
-    <title> Planted Trees! </title>
-    <body>
-        Essa é a página de Planted Trees!
-        <br/>
-        E esse é o usuário logado: {{ user }}
-        <br/>
-        E esse é o username do usuário logado: {{ user.username }}
-        <br/>
-        E esse é o email do usuário logado: {{ user.email }}
+{% extends 'base.html' %}
+{% load static %}
+{% block extra-css %}
+    <link rel="stylesheet" href="{% static 'css/planted-trees.css' %}">
+{% endblock %}
 
-        <div>
-            <a href={% url 'logout' %}>
-                Clica aqui pra deslogar
-            </a>
+{% block content %}
+    <div class="page-description">
+        <div class="left-side">
+            Welcome, {{ user.username }}!
         </div>
+        <div class="right-side">
+            <p>See all the trees you and your friends have planted!</p>
+        </div>
+    </div>
 
-        Trees Planted by User
-        <ul>
-            {% for tree in user_trees %}
-                <li>
-                    {{ tree }}
-                </li>
+    <div class="user-trees">
+        <table>
+            <tr>
+                <th> Tree Name </th>
+                <th> Planted At </th>
+                <th> Planted By </th>
+                <th> Linked Account </th>
+                <th> Details Link </th>
+            </tr>
+            {% for planted_tree in planted_trees %}
+                <tr>
+                    <td> {{ planted_tree.tree.name }} </td>
+                    <td> {{ planted_tree.planted_at }} </td>
+                    <td class="align-center">
+                        {{ planted_tree.user.username }}
+                    </td>
+                    <td class="align-center">
+                        {{planted_tree.account.name }}
+                    </td>
+                    <td class="align-center"> 
+                        <a href="{% url 'planted-tree-detail' planted_tree.id %}">View Tree</a>
+                    </td>
+                </tr>
             {% endfor %}
-        </ul>
+        </table>
 
-        Trees Planted by User's Friends
-        <ul>
-            {% for tree in account_trees %}
-                <li>
-                    {{ tree }}
-                </li>
-            {% endfor %}
-        </ul>
-    </body>
-</html>
+        <div class="add-button">
+            <a href="{% url 'add-planted-tree' %}">Register Planted Tree</a> 
+        </div>
+    </div>
+{% endblock %}

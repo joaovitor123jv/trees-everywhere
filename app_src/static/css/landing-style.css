@@ -1,0 +1,39 @@
+.landing-container {
+    width: 25em;
+    padding: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1em;
+    background-color: #EFEFEF;
+    margin-top: 2em;
+}
+
+.landing-container > .welcome-message {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+
+.landing-container > .login-invite {
+    margin-top: 1em;
+}
+
+.landing-container > .login-invite > a {
+    padding: 0.5em;
+    color: #EFEFEF;
+    width: fit-content;
+    border-radius: 0.5em;
+    background-color: blue;
+    border: 1px solid transparent;
+    transition: background-color 0.5s ease-in-out;
+}
+
+
+.landing-container > .login-invite > a:hover {
+    transition: background-color 0.5s ease-in-out;
+    color: blue;
+    border: 1px solid blue;
+    background-color: #F0F0FA;
+}

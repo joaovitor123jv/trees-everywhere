@@ -7,24 +7,23 @@
         </title>
         <link rel="stylesheet" href="{% static 'css/reset-style.css' %}" />
         <link rel="stylesheet" href="{% static 'css/header-style.css' %}" />
-        <link rel="stylesheet" href="{% static 'css/login-style.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/main-style.css' %}" />
+
+        {% block extra-css %}{% endblock %}
     </head>
 
     <body>
         <header class="page-header">
             <div class="topnav">
                 <a href="{% url 'landing_page' %}">Home</a>
-                <a href="{% url 'login' %} class="active">Login</a>
+                <a href="{% url 'planted_trees' %}">Planted Trees</a>
+                <a href="{% url 'logout' %}">Logout</a>
             </div>
         </header>
 
-        <main class="auth-container">
-            <div class="row">
-                <div class="col">
-                    {% block content %}
-                    {% endblock %}
-                </div>
-            </div>
+        <main class="main-content">
+            {% block content %}
+            {% endblock %}
         </main>
     </body>
 </html>
