@@ -15,14 +15,29 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.views.generic.base import RedirectView
+from django.views.generic.base import RedirectView, TemplateView
 from django.urls.conf import include
+from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 
 
 urlpatterns = [
+    # Generic Views
     path('', RedirectView.as_view(pattern_name='landing_page'), name='index'),
+
+    # View URLs
     path('guests/', include('guests.urls')),
     path('users/', include('users.urls')),
     path('trees/', include('trees.urls')),
+
+    # API URLs
+    path("api/v1/users/", include('users.api_urls')),
+    path("api/v1/trees/", include('trees.api_urls')),
+
+    # API Schema (docs)
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    # Optional UI:
+    path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
+
     path('admin/', admin.site.urls),
 ]

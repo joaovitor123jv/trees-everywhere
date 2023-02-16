@@ -1,0 +1,89 @@
+openapi: 3.0.3
+info:
+  title: Trees Everywhere API
+  version: 1.0.0
+  description: A project where you and your friends can plant trees tell everyone
+    you want to!
+paths:
+  /api/v1/trees/planted-tree/:
+    get:
+      operationId: trees_planted_tree_retrieve
+      tags:
+      - trees
+      security:
+      - jwtAuth: []
+      - basicAuth: []
+      - cookieAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+  /api/v1/trees/planted-tree/{id}:
+    get:
+      operationId: trees_planted_tree_retrieve_2
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - trees
+      security:
+      - jwtAuth: []
+      - basicAuth: []
+      - cookieAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+  /api/v1/trees/tree/:
+    get:
+      operationId: trees_tree_retrieve
+      tags:
+      - trees
+      security:
+      - jwtAuth: []
+      - basicAuth: []
+      - cookieAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+  /api/v1/users/users/:
+    get:
+      operationId: users_users_retrieve
+      description: |-
+        Returns the current user's data.
+
+        It is equivalent to the `request.user` object, but in JSON format.
+
+        To use this endpoint, the user must be authenticated.
+      tags:
+      - users
+      security:
+      - jwtAuth: []
+      - basicAuth: []
+      - cookieAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
+    jwtAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    tokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Token-based authentication with required prefix "Token"

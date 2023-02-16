@@ -65,6 +65,12 @@ app_src/users/fixtures app_src/trees/fixtures:
 	mkdir -p $@
 
 
+update-api-docs: docker-compose.yaml ## Generate API documentation and open a server to show them
+	@${LOG_DEFAULT} "Updating API documentation..."
+	@docker-compose run $(DJANGO_APP_NAME) python manage.py spectacular --color --file ./schema.yml
+	@${LOG_SUCCESS} "Updating API documentation... DONE"
+
+
 update-fixtures: app_src/users/fixtures app_src/trees/fixtures ## Update fixtures
 	@${LOG_DEFAULT} "Updating fixtures..."
 	@${LOG_WARNING} "\t Updating fixtures for app: users"
