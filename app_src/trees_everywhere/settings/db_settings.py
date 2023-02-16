@@ -6,6 +6,8 @@ import os
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'  # Expecting to have A LOT of trees
 
+AUTH_USER_MODEL = 'users.User'
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',

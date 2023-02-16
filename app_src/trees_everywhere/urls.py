@@ -15,15 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf import settings
-from django.shortcuts import redirect
+from django.views.generic.base import RedirectView
 from django.urls.conf import include
 
-def index(request):
-    return redirect(settings.GUEST_FIRST_PAGE)
 
 urlpatterns = [
-    path('', index),
+    path('', RedirectView.as_view(pattern_name='landing_page'), name='index'),
     path('guests/', include('guests.urls')),
     path('users/', include('users.urls')),
     path('trees/', include('trees.urls')),
